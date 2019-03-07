@@ -1,10 +1,12 @@
 #!groovy
-def lib = library("jenkins-dsl")
+def lib = library( "jenkins-dsl" )
 
 try {
-  stage ('Execute DSL Script') {
-    node ("${env.AGENT}") {
+  stage ( 'Execute DSL Script' ) {
+    node ( "${env.AGENT}" ) {
       echo "pipeline works"
     }
   }
+} catch ( java.lang.Throwable error ){
+  echo "This Failed"
 }
