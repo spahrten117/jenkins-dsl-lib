@@ -1,5 +1,5 @@
 #!groovy
-def lib = library("jenkins-dsl")
+
 def jobConfig = [:]
 def jobConfigText = libraryResource("ftb_job_names.yaml")
 
