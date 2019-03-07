@@ -4,7 +4,12 @@ def lib = library( "jenkins-dsl" )
 try {
   stage ( 'Execute DSL Script' ) {
     node {
-      echo "pipeline works"
+      echo "Start of jobDsl call."
+      jobDsl targets: ['jobs/seed_all.groovy'].join('\n'),
+        removedJobAction: 'DELETE',
+        removedViewAction: 'DELETE',
+        lookupStrategy: 'SEED_JOB'
+      echo "End of jobDsl call."
     }
   }
 } catch ( java.lang.Throwable error ){
