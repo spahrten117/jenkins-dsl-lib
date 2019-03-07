@@ -3,7 +3,7 @@ def lib = library( "jenkins-dsl" )
 
 try {
   stage ( 'Execute DSL Script' ) {
-    node ( "${env.AGENT}" ) {
+    node {
       echo "pipeline works"
     }
   }
