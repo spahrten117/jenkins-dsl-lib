@@ -10,15 +10,15 @@ def call (){
   // }
   //
   // for( jobName in jobConfig.ftp_app_names ) {
-    job('GeneratedJobs/Job-DSL-Test-1') {
-    	scm {
-        	git('git://github.com/quidryan/aws-sdk-test.git')
+    freeStyleJob('GeneratedJobs/Job-DSL-Test-1') {
+        scm {
+          git('git://github.com/quidryan/aws-sdk-test.git')
         }
         triggers {
-        	scm('H/15 * * * *')
+          githubPush()
         }
         steps {
-        	maven('-e clean test')
+          maven('-e clean test')
         }
     }
   // }
