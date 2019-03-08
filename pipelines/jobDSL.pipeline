@@ -5,10 +5,7 @@ try {
   stage ( 'Execute DSL Script' ) {
     node {
       echo "Start of jobDsl call."
-      jobDsl targets: ['jobs/seed_all.groovy'],
-        removedJobAction: 'DELETE',
-        removedViewAction: 'DELETE',
-        lookupStrategy: 'SEED_JOB'
+      jobs.seed_all()
       echo "End of jobDsl call."
     }
   }
