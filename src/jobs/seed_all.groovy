@@ -1,5 +1,4 @@
 #!groovy
-echo "Correct Job being ran"
 
 def jobConfig = [:]
 def jobConfigText = libraryResource("ftb_job_names.yaml")
