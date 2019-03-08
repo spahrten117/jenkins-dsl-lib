@@ -1,5 +1,4 @@
 #!groovy
-
   job('GeneratedJobs/Job-DSL-Test-${jobName}') {
   	scm {
       	git('git://github.com/quidryan/aws-sdk-test.git')

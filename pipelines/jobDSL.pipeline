@@ -5,7 +5,7 @@ try {
   stage ( 'Execute DSL Script' ) {
     node {
       echo "Start of jobDsl call."
-      jobDsl targets: ['jobs/seed_all.groovy'].join('\n'),
+      jobDsl targets: ['jobs/seed_all.groovy'],
         removedJobAction: 'DELETE',
         removedViewAction: 'DELETE',
         lookupStrategy: 'SEED_JOB'
@@ -15,5 +15,4 @@ try {
 } catch ( java.lang.Throwable error ){
   echo "This Failed"
   echo "${error.message}"
-  resetBuildStatus("FAILURE")
 }
