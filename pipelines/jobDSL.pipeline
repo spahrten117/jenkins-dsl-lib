@@ -5,7 +5,10 @@ try {
   stage ( 'Execute DSL Script' ) {
     node {
       echo "Start of jobDsl call."
-      seed_all()
+
+      jobDsl targets: ['jobs/*.groovy'].join('\n')
+
+
       echo "End of jobDsl call."
     }
   }
