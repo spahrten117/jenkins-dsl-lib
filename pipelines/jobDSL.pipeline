@@ -17,8 +17,8 @@ try {
       echo "Begin checkout of workspace."
       checkout scm
       echo "Start of jobDsl call."
-      jobDsl targets: ['src/jobs/seed_all.groovy'].join('\n')
-             additionalParameters: [jobConfig: jobConfig]
+      jobDsl targets: ['src/jobs/seed_all.groovy'].join('\n'),
+             additionalParameters: [ jobConfig: jobConfig ]
       echo "End of jobDsl call."
     }
   }
