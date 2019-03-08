@@ -5,7 +5,7 @@ try {
   stage ( 'Execute DSL Script' ) {
     node {
       echo "Start of jobDsl call."
-      jobs.seed_all()
+      seed_all()
       echo "End of jobDsl call."
     }
   }
