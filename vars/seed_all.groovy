@@ -11,4 +11,6 @@ def call (){
   //
   // for( jobName in jobConfig.ftp_app_names ) {
   // }
+
+  echo "Ran bad Job"
 }
