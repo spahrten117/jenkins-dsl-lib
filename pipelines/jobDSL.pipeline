@@ -5,7 +5,7 @@ try {
   stage ( 'Execute DSL Script' ) {
     node {
       def jobConfig = [:]
-      def jobConfigText = libraryResource("reasources/ftb_job_names.yaml")
+      def jobConfigText = libraryResource("ftb_job_names.yaml")
 
       jobConfig = readYaml text: "${jobConfigText}"
 
