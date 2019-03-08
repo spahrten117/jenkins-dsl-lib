@@ -6,7 +6,7 @@ try {
     node {
       echo "Start of jobDsl call."
 
-      jobDsl targets: ['jobs/*.groovy'].join('\n')
+      jobDsl targets: ['seed_all.groovy'].join('\n')
 
 
       echo "End of jobDsl call."
