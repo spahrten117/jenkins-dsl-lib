@@ -7,6 +7,8 @@ try {
       def jobConfig = [:]
       def jobConfigText = libraryResource("ftp_job_names.yaml")
 
+      echo "${jobConfigText}"
+
       jobConfig = readYaml text: "${jobConfigText}"
 
       if( !jobConfig?.ftp_app_names ){
@@ -16,6 +18,7 @@ try {
       checkout scm
       echo "Start of jobDsl call."
       jobDsl targets: ['src/jobs/seed_all.groovy'].join('\n')
+             additionalParameters: [jobConfig: jobConfig]
       echo "End of jobDsl call."
     }
   }
