@@ -10,7 +10,7 @@ def call (){
   // }
   //
   // for( jobName in jobConfig.ftp_app_names ) {
-    jobDsl('GeneratedJobs/Job-DSL-Test-1') {
+    job('GeneratedJobs/Job-DSL-Test-1') {
     	scm {
         	git('git://github.com/quidryan/aws-sdk-test.git')
         }
