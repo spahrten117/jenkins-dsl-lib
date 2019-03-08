@@ -4,6 +4,8 @@ def lib = library( "jenkins-dsl" )
 try {
   stage ( 'Execute DSL Script' ) {
     node {
+      echo "Begin checkout of workspace."
+      checkout scm
       echo "Start of jobDsl call."
 
       jobDsl targets: ['jobs/seed_all.groovy'].join('\n')
