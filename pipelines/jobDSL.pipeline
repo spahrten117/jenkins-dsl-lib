@@ -8,7 +8,7 @@ try {
       checkout scm
       echo "Start of jobDsl call."
 
-      jobDsl targets: ['jobs/seed_all.groovy'].join('\n')
+      jobDsl targets: ['src/jobs/seed_all.groovy'].join('\n')
 
 
       echo "End of jobDsl call."
