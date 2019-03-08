@@ -4,6 +4,14 @@ def lib = library( "jenkins-dsl" )
 try {
   stage ( 'Execute DSL Script' ) {
     node {
+      def jobConfig = [:]
+      def jobConfigText = libraryResource("reasources/ftb_job_names.yaml")
+
+      jobConfig = readYaml text: "${jobConfigText}"
+
+      if( !jobConfig?.ftp_app_names ){
+        error "not able to read yaml file"
+      }
       echo "Begin checkout of workspace."
       checkout scm
       echo "Start of jobDsl call."

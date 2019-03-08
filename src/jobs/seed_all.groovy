@@ -1,14 +1,4 @@
 #!groovy
-
-def jobConfig = [:]
-def jobConfigText = libraryResource("reasources/ftb_job_names.yaml")
-
-jobConfig = readYaml text: "${jobConfigText}"
-
-if( !jobConfig?.ftp_app_names ){
-  error "not able to read yaml file"
-}
-
 //def ftp_app_names = [ "app1", "app2", "app3", "app4", "app5", "app6", "app7", "app8", "app9", "app10" ]
 
 for( jobName in jobConfig.ftp_app_names ) {
