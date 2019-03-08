@@ -12,7 +12,7 @@
 def ftp_app_names = [ "app1", "app2", "app3", "app4", "app5", "app6", "app7", "app8", "app9", "app10" ]
 
 for( jobName in ftp_app_names ) {
-  job('GeneratedJobs/Job-DSL-Test-1') {
+  job("GeneratedJobs/Job-DSL-Test-${jobName}") {
       scm {
         git('git://github.com/quidryan/aws-sdk-test.git')
       }
